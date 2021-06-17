@@ -3,6 +3,7 @@
 body {
     font-family: 'PT Serif', serif;
     margin: 0px;
+    padding: 0px;
 }
 
 :root {
@@ -19,8 +20,16 @@ header {
 }
 
 .nav-bar {
-    height: 100px;
+  background-color: rgba(137, 150, 190, 0.4);
+  height: 100px;
 }
+
+.navbar-list a{
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
 .nav-bar ul {
     list-style: none;
     display: flex;
@@ -43,8 +52,17 @@ header {
 }
 
 .nav-bar a:hover {
-    border-bottom: 2px solid var(--white);
-    padding-bottom: 6px;
+    border-bottom: 1px solid var(--white);
+}
+
+@media only screen and (max-width: 600px) {
+  .nav-bar ul {
+    justify-content: space-evenly;
+    font-size: 1.5rem;
+  }
+  .nav-bar a p {
+    display: none;
+  }
 }
 
 .main {
@@ -86,4 +104,23 @@ header {
 .main-button:hover {
     background-color: var(--white);
     color: var(--lightblue);
+}
+
+@media only screen and (max-width: 600px) {
+  .main-title {
+    margin-top: 50px;
+  }
+
+  .main-title {
+    font-size: 3rem;
+  }
+
+  .main-desc {
+    font-size: 1.5rem;
+  }
+
+  .main-button {
+    width: 90%;
+    font-size: 1rem;
+  }
 }
