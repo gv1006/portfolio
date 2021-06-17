@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif&family=Playfair+Display&display=swap');
+
+body {
+    font-family: 'PT Serif', serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+:root {
+    --black: black;
+    --white: #f2f2f2;
+    --lightblue: #74CED7;
+}
+
+header {
+    background-image: url('images/bg-main.jpg');
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: top;
+}
+
+.nav-bar {
+  background-color: rgba(137, 150, 190, 0.4);
+  height: 100px;
+}
+
+.navbar-list a{
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.nav-bar ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-bar li {
+    margin: 0 15px;
+}
+
+.nav-bar a {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--white);
+}
+
+.nav-bar a:hover {
+    border-bottom: 1px solid var(--white);
+}
+
+@media only screen and (max-width: 600px) {
+  .nav-bar ul {
+    justify-content: space-evenly;
+    font-size: 1.5rem;
+  }
+  .nav-bar a p {
+    display: none;
+  }
+}
+
+.main {
+    height: calc(100vh - 100px);
+}
+
+.center {
+    text-align: center;
+}
+
+.main-title {
+    margin: 0;
+    color: var(--white); 
+    font-size: 4rem;
+    margin-top: 150px;
+    margin-bottom: 55px;
+}
+
+.main-desc {
+    color: var(--white); 
+    font-size: 2rem;
+    margin-bottom: 55px;
+}
+
+.main-button {
+    text-decoration: none;
+    color: var(--white);
+    padding: 8px 0px;
+    border: 1px solid var(--white);
+    display: block;
+    margin: auto;
+    width: 15%;
+    font-size: 1.2em;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.main-button:hover {
+    background-color: var(--white);
+    color: var(--lightblue);
+}
+
+@media only screen and (max-width: 600px) {
+  .main-title {
+    margin-top: 50px;
+  }
+
+  .main-title {
+    font-size: 3rem;
+  }
+
+  .main-desc {
+    font-size: 1.5rem;
+  }
+
+  .main-button {
+    width: 90%;
+    font-size: 1rem;
+  }
+}
