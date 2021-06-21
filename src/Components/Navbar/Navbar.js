@@ -1,46 +1,40 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { faBriefcase } from '@fortawesome/free-solid-svg-icons';
 import { faLaptopCode } from '@fortawesome/free-solid-svg-icons';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
 
-const NavbarItems = (props) => {
-  return(
-    <React.Fragment>
-      <a href="">
-        <FontAwesomeIcon icon={props.icon}/> 
-        <p>{props.text}</p>
-      </a>
-    </React.Fragment>
-  )
-}
+import { NavbarItem } from './NavbarItem';
 
 export const Navbar = (props) => {
   const navBarInfo = [
     {
+      navigateTo: '#aboutme',
       text: 'about me',
       icon: faUser
     },
     {
+      navigateTo: "",
       text: 'skills',
       icon: faLaptopCode
     },
     {
+      navigateTo: "",
       text: 'experience',
       icon: faBriefcase
     },
     {
+      navigateTo: "",
       text: 'contact me',
       icon: faPhone
     }
   ];
   const listItems = navBarInfo.map((navBarItem) =>
-    <li className="navbar-list">
-      <NavbarItems 
-        key={navBarItem.text} 
+    <li key={navBarItem.text}  className="navbar-list">
+      <NavbarItem 
         text={navBarItem.text} 
         icon ={navBarItem.icon}
+        navigateTo = {navBarItem.navigateTo}
       />
     </li>
   );

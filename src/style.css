@@ -6,10 +6,21 @@ body {
     padding: 0px;
 }
 
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
 :root {
     --black: black;
     --white: #f2f2f2;
+    --navbarBlue: #01677E;
+    --navbarShadow: #8471712b;
     --lightblue: #74CED7;
+    --linkedinBlue: #287bbc;
+    --githubBlack: #211F1F;
+    --mailRed: #d14836;
+    --twitterBlue: #00acee;
 }
 
 header {
@@ -20,8 +31,12 @@ header {
 }
 
 .nav-bar {
-  background-color: rgba(137, 150, 190, 0.4);
+  background-color: var(--navbarBlue);
   height: 100px;
+  position: fixed;
+  width: 100vw;
+  box-shadow: 0 15px 10px -15px var(--gfg-head-shadow);
+  z-index: 999999;
 }
 
 .navbar-list a{
@@ -55,6 +70,9 @@ header {
     border-bottom: 1px solid var(--white);
 }
 
+.nav-bar a p {
+  margin-top: 16px;
+}
 @media only screen and (max-width: 600px) {
   .nav-bar ul {
     justify-content: space-evenly;
@@ -66,7 +84,11 @@ header {
 }
 
 .main {
-    height: calc(100vh - 100px);
+    height: 100vh;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .center {
@@ -77,24 +99,24 @@ header {
     margin: 0;
     color: var(--white); 
     font-size: 4rem;
-    margin-top: 150px;
-    margin-bottom: 55px;
+    margin-bottom: 20px;
 }
 
 .main-desc {
     color: var(--white); 
     font-size: 2rem;
-    margin-bottom: 55px;
+    height: 80px;
+    margin-bottom: 30px;
 }
 
 .main-button {
     text-decoration: none;
     color: var(--white);
-    padding: 8px 0px;
+    padding: 8px 10px;
     border: 1px solid var(--white);
     display: block;
-    margin: auto;
-    width: 15%;
+    width: 20%;
+    max-width: 85%;
     font-size: 1.2em;
     border-radius: 30px;
     cursor: pointer;
@@ -122,5 +144,110 @@ header {
   .main-button {
     width: 90%;
     font-size: 1rem;
+  }
+  
+  .nav-bar ul {
+    justify-content: space-evenly;
+    font-size: 1.5rem;
+  }
+  .nav-bar a p {
+    display: none;
+  }
+}
+
+
+@media only screen 
+and (min-width: 601px) 
+and (max-width: 1023px) {
+  .main-button {
+    width: 30%;
+    font-size: 1.1rem;
+  }
+}
+
+/* Common Section */
+.social-media {
+  font-size: 2rem;
+  display: flex;
+  justify-content: space-evenly;
+  width: 200px;
+}
+
+.linkedin-icon {
+  color: var(--linkedinBlue);
+}
+
+.github-icon {
+  color: var(--githubBlack);
+}
+
+.mailto-icon {
+  color: var(--mailRed);
+}
+
+.twitter-icon {
+  color: var(--twitterBlue);
+}
+/* About me section */
+#aboutme {
+  display: flex;
+  font-size: 1.2rem;
+  width: 70%;
+  margin: auto;
+  line-height: 1.8rem;
+  margin-top: 75px;
+}
+/* Photo card */
+.photo-card {
+  width: 33.33%;
+  margin-right: 50px;
+  display: flex;
+  align-items: center;
+  flex-flow: column;
+  justify-content: center;
+}
+
+.photo-card img {
+  border-radius: 50%;
+  display: block;
+  margin: 0px auto 20px auto;
+}
+
+@media only screen and (max-width: 768px) {
+  /* About me section */
+  #aboutme {
+    margin-top: 30px;
+    width: 85%;
+    flex-flow: column;
+    font-size: 1rem;
+  }
+  /* Photo card */
+  .photo-card {
+    width: 100%;
+    margin-right: 0px;
+  }
+  .photo-card img {
+    margin: 30px auto 20px auto;
+    height: 200px;
+  }
+
+  /* aboutme text section */
+  #aboutme .text-section {
+    margin-top: 30px;
+  }
+
+  #aboutme h2 {
+    text-align: center;
+  }
+
+  #aboutme p {
+    text-align: justify;
+  }
+}
+
+@media only screen and (min-width: 769px) 
+and (max-width: 1150px) {
+  #aboutme {
+    width: 90%;
   }
 }
