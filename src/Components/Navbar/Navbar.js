@@ -24,7 +24,7 @@ export const Navbar = (props) => {
       icon: faBriefcase
     },
     {
-      navigateTo: "",
+      navigateTo: "#contactme",
       text: 'contact me',
       icon: faPhone
     }
