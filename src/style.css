@@ -34,20 +34,26 @@ header {
 
 .nav-bar {
   background-color: var(--navbarBlue);
-  height: 100px;
+  height: 80px;
   position: fixed;
   width: 100vw;
   box-shadow: 0 15px 10px -15px var(--gfg-head-shadow);
   z-index: 999999;
-}
-
-.navbar-list a{
   display: flex;
-  flex-flow: column;
   align-items: center;
+  justify-content: space-around;
 }
 
-.nav-bar ul {
+.logo {
+  /* align-self: flex-start; */
+  font-size: 2.5rem;
+  color: var(--white);
+  text-decoration: none;
+  letter-spacing: 5px;
+}
+
+
+.nav-bar-list {
     list-style: none;
     display: flex;
     flex-direction: row;
@@ -56,33 +62,29 @@ header {
     height: 100%;
     margin: 0;
     padding: 0;
+    letter-spacing: 2px;
+}
+
+.hamburger-icon {
+  display: none;
+  cursor: pointer;
 }
 
 .nav-bar li {
-    margin: 0 15px;
+    margin:  0 15px;
 }
 
-.nav-bar a {
+.nav-bar ul a {
     text-transform: uppercase;
     text-decoration: none;
     color: var(--white);
+    padding: 10px 0px;
+    display: block;
 }
 
-.nav-bar a:hover {
+.nav-bar ul a:hover,
+.navitem-selected {
     border-bottom: 1px solid var(--white);
-}
-
-.nav-bar a p {
-  margin-top: 16px;
-}
-@media only screen and (max-width: 600px) {
-  .nav-bar ul {
-    justify-content: space-evenly;
-    font-size: 1.5rem;
-  }
-  .nav-bar a p {
-    display: none;
-  }
 }
 
 .main {
@@ -130,7 +132,11 @@ header {
     color: var(--lightblue);
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
+  body {
+    overflow: hidden;
+  }
+
   .main-title {
     margin-top: 50px;
   }
@@ -148,12 +154,43 @@ header {
     font-size: 1rem;
   }
   
-  .nav-bar ul {
-    justify-content: space-evenly;
-    font-size: 1.5rem;
+  .nav-bar-list {
+    position: absolute;
+    flex-direction: column;
+    height: 0vh;
+    top: 80px;
+    justify-content: space-around;
+    background-color: var(--navbarBlue);
+    width: 100vw;
+    right: 0px;
+    align-items: flex-start;
+    overflow: hidden;
+    transition: height 0.3s ease-out;
   }
-  .nav-bar a p {
-    display: none;
+
+  .nav-bar-list-active {
+    height: 30vh;
+    overflow: visible;
+    transition: height 0.3s ease-out;
+  }
+  
+  .nav-bar li {
+    margin:  0 50px;
+  }
+
+  .nav-bar {
+    width: 100vw;
+    justify-content: flex-start;
+    padding: 0px 50px;
+    box-sizing: border-box;
+    font-size: 1rem;
+  }
+
+  .hamburger-icon {
+    display: block;
+    font-size: 1.5rem;
+    color: var(--white);
+    margin-left: auto;
   }
 }
 
@@ -257,164 +294,5 @@ and (max-width: 1023px) {
 and (max-width: 1150px) {
   #aboutme {
     width: 90%;
-  }
-}
-
-/* Contact me section */
-#contactme {
-  padding: 105px 0px;
-  display: flex;
-  justify-content: center;
-  background-color: var(--lightSandal);
-}
-
-#contactme .text-section {
-  width: 30%;
-  margin-right: 30px;
-}
-
-#contactme h2 {
-  font-size: 5rem;
-  letter-spacing: 1.5rem;
-}
-
-.contact-me-desc {
-  margin-top: 50px;
-}
-
-#contactme h3 {
-  margin-top: 30px;
-  margin-bottom: 5px;
-}
-
-#contactme .form-section {
-  width: 30%;
-  text-transform: uppercase;
-}
-
-.form-section form {
-  height: 80%;
-  width: 100%;
-  margin-top: 60px;
-  display: flex;
-  flex-flow: column;
-  justify-content: space-evenly;
-  margin: 60px auto 0px auto;
-  color: rgb(171, 171, 171);
-}
-
-.first-name-div,
-.email-div,
-.textarea-div {
-  border: 2px solid var(--black);
-}
-
-.form-section input {
-  width: 95%;
-  background-color: inherit;
-  height: 25px;
-  padding: 3px 3px 3px 12px;
-  border: none;
-  outline: none;
-  overflow: hidden;
-}
-
-.form-section textarea {
-  width: 95%;
-  background-color: inherit;
-  height: 100px;
-  padding: 10px 3px 3px 12px;
-  border-width: 1px;
-  outline: none;
-  border: none;
-  resize: none;
-}
-
-.submit-button {
-  width: 100px !important;
-  height: 30px;
-  background-color: var(--black);
-  color: var(--white);
-  border: 2px solid var(--lightGray);
-  cursor: pointer;
-}
-
-.submit-button:hover {
-  color: var(--black);
-  background-color: var(--white);
-}
-
-@media only screen and (max-width: 600px) {
-  #contactme {
-    flex-flow: column;
-    align-items: center;
-  }
-
-  #contactme h2 {
-    font-size: 2.5rem;
-    letter-spacing: 0.7rem;
-    text-align: center;
-  }
-
-  #contactme .text-section {
-    width: 80%;
-    margin-right: 0px;
-  }
-
-  #contactme .form-section {
-    width: 80%;
-  }
-
-  .contact-me-desc {
-    text-align: justify;
-    margin-top: 25px;
-  }
-  #contactme h3 {
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 5px;
-  }
-
-  #contactme p {
-    text-align: center;
-  }
-  .form-section form {
-    margin-top: 30px;
-  }
-
-  .first-name-div,
-  .email-div,
-  .textarea-div {
-    margin-bottom: 20px;
-  }
-
-  .submit-div {
-    display: block;
-    margin: 0px auto;
-  }
-}
-
-@media only screen and (min-width: 601px) 
-and (max-width: 1100px) {
-  #contactme h2 {
-    font-size: 4rem;
-    letter-spacing: 1.2rem;
-  }
-
-  #contactme .text-section {
-    width: 35%;
-  }
-
-  .form-section {
-    width: 35%;
-  }
-
-  .contact-me-desc {
-    margin-top: 20px;
-  }
-
-  #contactme h3 {
-    margin-top: 20px;
-    margin-bottom: 5px;
   }
 }

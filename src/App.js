@@ -1,4 +1,5 @@
 import React from 'react';
+import { Switch, Route, NavLink } from "react-router-dom";
 import { Navbar } from './Components/Navbar/Navbar';
 import { Main } from './Components/Main/Main';
 import AboutMe from './Components/Aboutme/Aboutme';

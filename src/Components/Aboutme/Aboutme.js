@@ -3,7 +3,7 @@ import { PhotoCard } from './PhotoCard';
 
 const AboutMe = (props) => {
     return(
-        <section id="aboutme">
+        <section id="aboutme-container">
             <PhotoCard />
             <div className="text-section">
                 <h2>About Me.</h2>

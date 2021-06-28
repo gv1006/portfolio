@@ -1,48 +1,62 @@
-import React from 'react';
-import { faUser } from '@fortawesome/free-solid-svg-icons';
-import { faBriefcase } from '@fortawesome/free-solid-svg-icons';
-import { faLaptopCode } from '@fortawesome/free-solid-svg-icons';
-import { faPhone } from '@fortawesome/free-solid-svg-icons';
-
-import { NavbarItem } from './NavbarItem';
+import React, {useState} from 'react';
+import { Switch, Route, NavLink } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 
 export const Navbar = (props) => {
+  const [hamBurgerIconClicked, setHamburgerIconClicked] = useState(false);
   const navBarInfo = [
     {
-      navigateTo: '#aboutme',
-      text: 'about me',
-      icon: faUser
+      navigateTo: 'home',
+      text: 'home'
     },
     {
-      navigateTo: "",
-      text: 'skills',
-      icon: faLaptopCode
+      navigateTo: 'aboutme-container',
+      text: 'about'
     },
     {
-      navigateTo: "",
-      text: 'experience',
-      icon: faBriefcase
+      navigateTo: "experience",
+      text: 'education & experience'
     },
     {
-      navigateTo: "#contactme",
-      text: 'contact me',
-      icon: faPhone
+      navigateTo: "contactme",
+      text: 'contact me'
     }
   ];
+
+  const _hamBurgerMenuClicked = (event) => {
+    if(!event.isTrusted) {
+      return;
+    }
+    setHamburgerIconClicked(hamBurgerIconClicked => !hamBurgerIconClicked);
+  };
+
+  const _navItemClicked = (event) => {
+    if(!event.isTrusted) {
+      return;
+    }
+    setHamburgerIconClicked(false);
+  }
+
   const listItems = navBarInfo.map((navBarItem) =>
     <li key={navBarItem.text}  className="navbar-list">
-      <NavbarItem 
-        text={navBarItem.text} 
-        icon ={navBarItem.icon}
-        navigateTo = {navBarItem.navigateTo}
-      />
+      <NavLink activeClassName="navitem-selected" to={navBarItem.navigateTo} onClick= {_navItemClicked}>{navBarItem.text}</NavLink>
     </li>
   );
+  const navbarListClassList = ['nav-bar-list'];
+  if(hamBurgerIconClicked) {
+    navbarListClassList.push('nav-bar-list-active');
+  } 
+  let hamBurgerIcon = hamBurgerIconClicked ? faTimesCircle : faBars;
   return(
   <nav className="nav-bar">
-    <ul>
+    <NavLink to="" className="logo" onClick={_navItemClicked}>GV</NavLink>
+    <ul className={navbarListClassList.join(' ')}>
       {listItems}
     </ul>
+    <span className="hamburger-icon" onClick={_hamBurgerMenuClicked}>
+      <FontAwesomeIcon className={props.className} icon={hamBurgerIcon}/>
+    </span>
   </nav>
   );
 } 

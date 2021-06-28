@@ -1,0 +1,176 @@
+:root {
+  --black: black;
+  --white: #f2f2f2;
+  --navbarBlue: #01677E;
+  --navbarShadow: #8471712b;
+  --lightblue: #74CED7;
+  --linkedinBlue: #287bbc;
+  --githubBlack: #211F1F;
+  --mailRed: #d14836;
+  --twitterBlue: #00acee;
+  --lightSandal: rgb(230, 230, 220);
+  --lightGray: rgb(145, 145, 145);
+}
+
+#contactme {
+  padding: 105px 0px;
+  display: flex;
+  justify-content: center;
+  background-color: var(--lightSandal);
+}
+
+#contactme .text-section {
+  width: 30%;
+  margin-right: 30px;
+}
+
+#contactme h2 {
+  font-size: 5rem;
+  letter-spacing: 1.5rem;
+}
+
+.contact-me-desc {
+  margin-top: 50px;
+}
+
+#contactme h3 {
+  margin-top: 30px;
+  margin-bottom: 5px;
+}
+
+#contactme .form-section {
+  width: 30%;
+  text-transform: uppercase;
+}
+
+.form-section form {
+  height: 80%;
+  width: 100%;
+  margin-top: 60px;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-evenly;
+  margin: 60px auto 0px auto;
+  color: rgb(171, 171, 171);
+}
+
+.first-name-div,
+.email-div,
+.textarea-div {
+  border: 2px solid var(--black);
+}
+
+.error {
+  border: 2px solid var(--mailRed);
+  color: var(--mailRed);
+}
+
+.form-section input {
+  width: 95%;
+  background-color: inherit;
+  height: 25px;
+  padding: 3px 3px 3px 12px;
+  border: none;
+  outline: none;
+  overflow: hidden;
+}
+
+.form-section textarea {
+  width: 95%;
+  background-color: inherit;
+  height: 100px;
+  padding: 10px 3px 3px 12px;
+  border-width: 1px;
+  outline: none;
+  border: none;
+  resize: none;
+}
+
+.submit-button {
+  width: 100px !important;
+  height: 30px;
+  background-color: var(--black);
+  color: var(--white);
+  border: 2px solid var(--lightGray);
+  cursor: pointer;
+}
+
+.submit-button:disabled {
+  background: var(--lightSandal);
+  color: var(--black);
+}
+
+@media only screen and (max-width: 600px) {
+  #contactme {
+    flex-flow: column;
+    align-items: center;
+  }
+
+  #contactme h2 {
+    font-size: 2.5rem;
+    letter-spacing: 0.7rem;
+    text-align: center;
+  }
+
+  #contactme .text-section {
+    width: 80%;
+    margin-right: 0px;
+  }
+
+  #contactme .form-section {
+    width: 80%;
+  }
+
+  .contact-me-desc {
+    text-align: justify;
+    margin-top: 25px;
+  }
+  #contactme h3 {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 5px;
+  }
+
+  #contactme p {
+    text-align: center;
+  }
+  .form-section form {
+    margin-top: 30px;
+  }
+
+  .first-name-div,
+  .email-div,
+  .textarea-div {
+    margin-bottom: 20px;
+  }
+
+  .submit-div {
+    display: block;
+    margin: 0px auto;
+  }
+}
+
+@media only screen and (min-width: 601px) 
+and (max-width: 1100px) {
+  #contactme h2 {
+    font-size: 4rem;
+    letter-spacing: 1.2rem;
+  }
+
+  #contactme .text-section {
+    width: 35%;
+  }
+
+  .form-section {
+    width: 35%;
+  }
+
+  .contact-me-desc {
+    margin-top: 20px;
+  }
+
+  #contactme h3 {
+    margin-top: 20px;
+    margin-bottom: 5px;
+  }
+}
