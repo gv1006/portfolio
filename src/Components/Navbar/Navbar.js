@@ -11,7 +11,7 @@ export const Navbar = (props) => {
       text: 'home'
     },
     {
-      navigateTo: 'aboutme-container',
+      navigateTo: 'aboutme',
       text: 'about'
     },
     {
