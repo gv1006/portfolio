@@ -14,7 +14,7 @@ export const App = (props) => {
         <div>
             <Navbar />
             <Suspense fallback={
-                <div><Loading /></div>
+                <div className="page-center"><Loading /></div>
             }>
                 <Main/>
                 <AboutMe />

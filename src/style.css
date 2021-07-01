@@ -33,6 +33,15 @@ header {
     background-position: top;
 }
 
+.page-center {
+  position: absolute;
+  height: 100vh;
+  display: flex;
+  width: 100vw;
+  align-items: center;
+  justify-content: center;
+}
+
 .nav-bar {
   background-color: var(--navbarBlue);
   height: 80px;
