@@ -1,0 +1,22 @@
+.loading {
+  display: flex;
+  justify-content: center;
+}
+
+.loading::after {
+  content: "";
+  width: 70px;
+  height: 70px;
+  background-color: var(--navbarBlue);
+  border-radius: 50%;
+  opacity: 0.5;
+  animation: loading 1s ease infinite;
+}
+
+@keyframes loading {
+  to {
+    opacity: 1;
+    transform: scale(1.75);
+    transform: roate;
+  }
+}

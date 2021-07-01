@@ -94,6 +94,7 @@ header {
     flex-flow: column;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 
 .center {
@@ -104,7 +105,7 @@ header {
     margin: 0;
     color: var(--white); 
     font-size: 4rem;
-    margin-bottom: 20px;
+    margin-bottom: 2rem;
 }
 
 .main-desc {
@@ -151,7 +152,11 @@ header {
     width: 90%;
     font-size: 1rem;
   }
-  
+
+  .logo {
+    font-size: 2rem;
+  }
+
   .nav-bar-list {
     position: absolute;
     flex-direction: column;
@@ -163,6 +168,7 @@ header {
     right: 0px;
     align-items: flex-start;
     overflow: hidden;
+    font-size: 0.8rem;
     transition: height 0.3s ease-out;
   }
 
@@ -227,7 +233,7 @@ and (max-width: 1023px) {
 }
 /* About me section */
 #aboutme {
-  padding: 120px 0px;
+  padding: 125px 0px;
 }
 
 .aboutme-container {
@@ -265,7 +271,7 @@ and (max-width: 1023px) {
 @media only screen and (max-width: 768px) {
   /* About me section */
   #aboutme {
-    padding: 30px 20px;
+    padding: 125px 20px;
   }
 
   .aboutme-container {

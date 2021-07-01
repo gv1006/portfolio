@@ -1,54 +1,28 @@
 import React, { useState } from 'react';
+import emailjs from 'emailjs-com';
 
 export const FormSection = (props) => {
   const [firstName, setFirstName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
-  const [firstNameValid, setFirstNameValid] = useState(false);
-  const [emailValid, setEmailValid] = useState(false);
-  const [messageValid, setMessageValid] = useState(false);
-  const [formValid, setFormValid] = useState(false);
 
-  const _validateInput = (name, value) => {
-    switch(name) {
-      case "fname":
-        setFirstNameValid(value.length > 0);
-        break;
-      case "message":
-        setMessageValid(value.length > 0);
-        break;
-      case "email":
-        setEmailValid(value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i));
-        break;
-      default:
-        break;
-    }
-    setFormValid(firstNameValid && emailValid && messageValid);
-  }
   const onInputChange = (event, setState) => {
     if(!event.isTrusted) {
       return;
     }
-    const name = event.target.name;
     const value = event.target.value;
-    setState(value, _validateInput(name, value));
+    setState(value);
   }
-  const firstNameInputClass = ['first-name-div'];
-  if(firstName.length > 0 && !firstNameValid) {
-    firstNameInputClass.push('error');
+
+  const handleSubmit = (e) => {
+    console.log(e);
+    e.preventDefault();
   }
-  const emailInputClass = ['email-div'];
-  if(email.length > 0 && !emailValid) {
-    emailInputClass.push('error');
-  }
-  const messageClass = ['textarea-div'];
-  if(message.length > 0 && !messageValid) {
-    messageClass.push('error');
-  }
-  return(
+
+ return(
     <div className="form-section">
-      <form>
-        <div className={firstNameInputClass.join(' ')}>
+      <form autoComplete="off">
+        <div className="first-name-div">
           <input
             type="text" 
             placeholder="First Name" 
@@ -58,7 +32,7 @@ export const FormSection = (props) => {
             name="fname"
             ></input>
         </div>
-        <div className={emailInputClass.join(' ')}>
+        <div className="email-div">
           <input
             type="email" 
             placeholder="Email" 
@@ -67,7 +41,7 @@ export const FormSection = (props) => {
             onInputChange(event, setEmail)} 
             name="email"></input>
         </div>
-        <div className={messageClass.join(' ')}>
+        <div className="textarea-div">
           <textarea
             placeholder="Enter your message here..."
             maxLength="200" 
@@ -76,7 +50,7 @@ export const FormSection = (props) => {
             name="message"></textarea>
         </div>
         <div className="submit-div">
-          <button className="submit-button" type="submit" disabled={!formValid}>submit</button>
+          <button className="submit-button" type="submit" onClick={handleSubmit}>submit</button>
         </div>
       </form>
     </div>

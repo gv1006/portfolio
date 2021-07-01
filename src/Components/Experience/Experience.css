@@ -1,0 +1,121 @@
+.text-center {
+  text-align: center;
+}
+
+.text-box {
+  margin-bottom: 3rem;
+  text-transform: uppercase;
+}
+
+#experience {
+  padding: 120px 0px;
+}
+
+.experience-container {
+  display: flex;
+  width: 80%;
+  margin: auto;
+  justify-content: space-evenly;
+}
+
+.education {
+  width: 47%;
+}
+
+.experience {
+  width: 47%;
+}
+
+.box {
+  overflow: hidden;
+  min-height: 450px;
+  width: 100%;
+  background-color:var(--white);
+  box-shadow: 0 1px 1px 0 rgb(0 0 0 / 6%), 0 2px 5px 0 rgb(0 0 0 / 20%);
+}
+
+.cover-picture {
+  background-image: url('../../images/footer-bag.jpg');
+  height: 70px;
+  width: 100%;
+  background-position:center;
+  position: relative;
+}
+
+.overlay-c {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.7;
+  background-color: var(--navbarBlue);
+}
+
+.box-category {
+  text-align: center;
+  padding: 10px;
+  width: 20%;
+  margin: auto;
+  margin-top: -16px;
+  border-radius: 4px;
+  letter-spacing: 0.4px;
+  position: relative;
+  z-index: 1000;
+  font-size: 0.7rem;
+  color: var(--black);
+  background-color: #fff8dc;
+  text-transform: uppercase;
+  box-shadow: 0 1px 1px 0 rgb(0 0 0 / 6%), 0 2px 5px 0 rgb(0 0 0 / 20%);
+}
+
+.section-body {
+  padding: 10px 20px 30px 20px;
+}
+
+.title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 3px;
+}
+
+.desc {
+  margin-bottom: 10px;
+}
+
+.blue {
+  color: var(--linkedinBlue);
+  font-weight: 400;
+}
+
+.box li {
+  margin-left: 20px;
+}
+
+@media only screen and (max-width: 1024px) {
+  .experience-container {
+    width: 95%;
+  }
+}
+
+@media only screen and (max-width: 568px) {
+  .experience-container {
+    flex-flow: column;
+    font-size: 0.8rem;
+  }
+
+  .education {
+    width: 95%;
+    margin: auto;
+    margin-bottom: 20px;
+  }
+
+  .title {
+    font-size: 1rem;
+  }
+
+  .experience {
+    width: 95%;
+    margin: auto;
+  }
+}

@@ -1,18 +1,26 @@
-import React from 'react';
-import { Switch, Route, NavLink } from "react-router-dom";
+import React, {  Suspense } from 'react';
+import { Loading } from './Components/Common/Loading/Loading';
 import { Navbar } from './Components/Navbar/Navbar';
-import { Main } from './Components/Main/Main';
-import AboutMe from './Components/Aboutme/Aboutme';
+// import  Main  from './Components/Main/Main';
+// import AboutMe from './Components/Aboutme/Aboutme';
 import { ContactMe } from './Components/ContactMe/ContactMe';
+import Experience from './Components/Experience/Experience';
+const Main = React.lazy(() => import('./Components/Main/Main'));
+const AboutMe = React.lazy(() => import('./Components/Aboutme/Aboutme'));
 import './style.css';
 
 export const App = (props) => {
     return(
         <div>
             <Navbar />
-            <Main/>
-            <AboutMe />
-            <ContactMe />
+            <Suspense fallback={
+                <div><Loading /></div>
+            }>
+                <Main/>
+                <AboutMe />
+                <Experience />
+                <ContactMe />
+            </Suspense>
         </div>
     )
 }

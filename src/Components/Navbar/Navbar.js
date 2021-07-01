@@ -38,10 +38,13 @@ export const Navbar = (props) => {
     setHamburgerIconClicked(false);
   }
 
-  const listItems = navBarInfo.map((navBarItem) =>
-    <li key={navBarItem.text}  className="navbar-list">
-      <NavLink activeClassName="navitem-selected" to={navBarItem.navigateTo} onClick= {_navItemClicked}>{navBarItem.text}</NavLink>
-    </li>
+  const listItems = navBarInfo.map((navBarItem) =>{
+    return (
+      <li key={navBarItem.text}  className="navbar-list">
+        <NavLink activeClassName="navitem-selected" to={navBarItem.navigateTo} onClick= {_navItemClicked}>{navBarItem.text}</NavLink>
+      </li>
+    );
+  }
   );
   const navbarListClassList = ['nav-bar-list'];
   if(hamBurgerIconClicked) {
